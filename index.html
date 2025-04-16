@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="app.css">
+    <title>TechAcademy Fontend Project</title>
+</head>
+
+<body>
+    <div class="search-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for a keyword">
+            <button onclick="searchProductsByName()">Search</button>
+        </div>
+    </div>
+    <div class="product-list"></div>
+    <div class="navigation-bottom">
+        <div class="container">
+            <button id="prev-button" class="btn_pagination" onclick="handlePrev()">‹ Prev</button>
+            <span id="page-counter"></span>
+            <button id="next-button" class="btn_pagination" onclick="handleNext()">Next ›</button>
+        </div>
+    </div>
+</body>
+
+</html>
