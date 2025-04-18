@@ -6,6 +6,8 @@ let totalPages = 1;
 const totalProducts = 20;
 const itemsPerPage = 10;
 
+let filteredProducts = [];
+
 fetch("https://api.imgflip.com/get_memes")
 .then(response => {
     if (!response.ok) throw new Error(`HTTP error during meme fetch | Status: ${response.status}`);
@@ -16,6 +18,7 @@ fetch("https://api.imgflip.com/get_memes")
     console.log(memes);
 
     allProducts = generateProducts();
+    filteredProducts = allProducts;
     totalPages = Math.ceil(allProducts.length / itemsPerPage);
     displayItems();
     updatePaginationButtons();
@@ -24,6 +27,7 @@ fetch("https://api.imgflip.com/get_memes")
     console.error("There was an error while fetching memes :(")
 
     allProducts = generateProducts();
+    filteredProducts = allProducts;
     totalPages = Math.ceil(allProducts.length / itemsPerPage);
     displayItems();
     updatePaginationButtons();
@@ -67,7 +71,7 @@ function generateProducts() {
 function displayItems() {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const paginatedProducts = allProducts.slice(startIndex, endIndex);
+    const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
 
     let content = "";
     for (product of paginatedProducts) { 
@@ -133,6 +137,20 @@ function handleNext() {
 // Search logic
 
 function searchProductsByName(prompt) {
-    // TODO
-    throw new Error("Not implemented yet.")
+    const lowerPrompt = prompt.toLowerCase();
+    filteredProducts = allProducts.filter(p => 
+        p.title.toLowerCase().includes(lowerPrompt)
+        ||
+        p.desc.toLowerCase().includes(lowerPrompt)
+    );
+
+    currentPage = 1;
+    totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+    displayItems();
+    updatePaginationButtons();
+}
+
+function search() {
+    const prompt = document.getElementById("search-input").value;
+    searchProductsByName(prompt);    
 }

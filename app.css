@@ -30,6 +30,7 @@ body {
     flex-direction: column;
     transition: all 0.2s ease-in-out;
     border: 1px solid #bbb;
+    cursor: pointer;
 }
 
 .card:hover {
@@ -65,11 +66,16 @@ body {
 .card .price {
     font-size: var(--font-2xl);
     font-weight: bold;
+    transition: all .5s ease;
 }
 
 .card .price::after {
     content: "€";
     font-size: var(--font-md);
+}
+
+.card:hover > .price {
+    transform: scale(1.3) translateX(2rem);
 }
 
 
