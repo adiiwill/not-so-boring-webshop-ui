@@ -22,6 +22,19 @@ fetch("https://api.imgflip.com/get_memes")
     totalPages = Math.ceil(allProducts.length / itemsPerPage);
     displayItems();
     updatePaginationButtons();
+
+    const topProduct = determineTopProduct(allProducts);
+
+    document.querySelector(".top-card").innerHTML = `
+    <div class="top-badge">TOP CHOICE</div>
+    <img src="${topProduct.image}" class="top-image" alt="Top Product Image">
+    <div class="top-card-content">
+        <p class="top-title">${topProduct.title}</p>
+        <p class="top-rating">${topProduct.rating}</p>
+        <p class="top-description">${topProduct.desc}</p>
+        <p class="top-price">${topProduct.price}</p>
+    </div>
+    `
 })
 .catch(err => { 
     console.error("There was an error while fetching memes :(")
@@ -61,7 +74,7 @@ function generateProducts() {
             title:  `${brand} ${type} ${modelNumber}`,
             desc:   `This is a ${adjective} ${type.toLowerCase()} with excellent ${feature}.`,
             price:  `${price}`,
-            rating: `${rating}/10 (${Math.floor(Math.random() * 100) + 1})`
+            rating: `${rating}/10 (${Math.floor(Math.random() * 100) + 1} reviews)`
         })
     }
 
@@ -153,4 +166,15 @@ function searchProductsByName(prompt) {
 function search() {
     const prompt = document.getElementById("search-input").value;
     searchProductsByName(prompt);    
+}
+
+// Top product logic
+
+const determineTopProduct = (productList) => {
+    // TODO write your code here
+    return productList.reduce((top, current) => {
+        return current.rating > top.rating
+        ? current
+        : top;
+    }, productList[0])
 }

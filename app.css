@@ -1,12 +1,19 @@
 :root {
     /* FONT SIZE PRESETS */
-    --font-xs: 0.75rem;   /* 12px */
-    --font-sm: 0.875rem;  /* 14px */
-    --font-base: 1rem;    /* 16px */
-    --font-md: 1.125rem;  /* 18px */
-    --font-lg: 1.25rem;   /* 20px */
-    --font-xl: 1.5rem;    /* 24px */
-    --font-2xl: 2rem;     /* 32px */
+    --font-xs: 0.75rem;
+    /* 12px */
+    --font-sm: 0.875rem;
+    /* 14px */
+    --font-base: 1rem;
+    /* 16px */
+    --font-md: 1.125rem;
+    /* 18px */
+    --font-lg: 1.25rem;
+    /* 20px */
+    --font-xl: 1.5rem;
+    /* 24px */
+    --font-2xl: 2rem;
+    /* 32px */
 }
 
 body {
@@ -74,7 +81,7 @@ body {
     font-size: var(--font-md);
 }
 
-.card:hover > .price {
+.card:hover>.price {
     transform: scale(1.3) translateX(2rem);
 }
 
@@ -138,9 +145,11 @@ body {
     0% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.1;
     }
+
     100% {
         opacity: 1;
     }
@@ -193,4 +202,78 @@ body {
     cursor: pointer;
     background-color: #232323;
     color: #fff;
+}
+
+/* ======= TOP PRODUCT ======= */
+
+.top-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5rem;
+    padding-top: 2rem;
+}
+
+.top-card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    gap: 1rem;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 100px rgba(203, 155, 81, .8);
+    transition: all 0.15s ease;
+    cursor: pointer;
+}
+
+.top-card:hover {
+    transform: scale(1.1);
+}
+
+.top-image {
+    width: 100%;
+    height: 16rem;
+    object-fit: contain;
+    flex-basis: content;
+}
+
+.top-title {
+    font-size: var(--font-lg);
+    font-weight: bold;
+}
+
+.top-rating {
+    font-size: var(--font-sm);
+    display: flex;
+    align-items: center;
+    margin-bottom: .75rem;
+    font-style: italic;
+}
+
+.top-description {
+    font-size: var(--font-base);
+}
+
+.top-price {
+    font-size: var(--font-2xl);
+    font-weight: bold;
+}
+
+.top-price::after {
+    content: "€";
+    font-size: var(--font-md);
+}
+
+.top-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #f6e27a, #cb9b51);
+    color: #333;
+    font-size: .75rem;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
