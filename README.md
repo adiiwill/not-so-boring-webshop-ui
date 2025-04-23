@@ -19,7 +19,7 @@ A modern and playful webshop frontend built using vanilla HTML, CSS, and JavaScr
 
 ## 🖼️ Preview
 
-![screenshot](preview.png)
+![screenshot](screenshot.png)
 
 ## 🚀 How to Use
 
@@ -47,5 +47,5 @@ Feel free to reach out: LinkedIn | GitHub
 Let me know if you’d like:
 - a Hungarian version
 - a short tagline for social sharing
-- a screenshot added to the README  
+
 Or anything else to polish it!
