@@ -40,7 +40,7 @@ Originally built as part of a frontend task for a mentoring program. While I cou
 ## 📫 Contact
 
 Made with ❤️ by Ádám Gazdag
-Feel free to reach out: LinkedIn | GitHub
+All my links are on my Github profile!
 
 ---
 
