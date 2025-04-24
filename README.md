@@ -39,7 +39,7 @@ Originally built as part of a frontend task for a mentoring program. While I cou
 
 ## 📫 Contact
 
-Made with ❤️ by Ádám Gazdag
+Made with ❤️ by Ádám Gazdag \
 All my links are on my Github profile!
 
 ---
