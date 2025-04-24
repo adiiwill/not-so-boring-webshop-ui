@@ -25,7 +25,7 @@ A modern and playful webshop frontend built using vanilla HTML, CSS, and JavaScr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/not-so-boring-webshop-ui.git
+   git clone https://github.com/adiiwill/not-so-boring-webshop-ui.git
    cd not-so-boring-webshop-ui
    ```
 2. Open `index.html` in your browser:
